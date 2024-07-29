@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:payment/core/component/custom_button.dart';
 
-import 'payment details_screen.dart';
+import '../payment_details_screen/payment_details_screen.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -92,24 +93,16 @@ class CartScreen extends StatelessWidget {
             SizedBox(
               height: 15.h,
             ),
-            MaterialButton(
-              minWidth: double.infinity,
-              height: 60.h,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.r),
-              ),
-              color: const Color(0xFF34A853),
+            CustomButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) =>
-                    const PaymentDetailsScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PaymentDetailsScreen(),
+                  ),
+                );
               },
-              child: Text(
-                'Complete Payment',
-                style: fontStyle.displayLarge!.copyWith(
-                  fontSize: 22.sp,
-                ),
-              ),
+              text: 'Complete Payment',
             ),
             SizedBox(
               height: 12.h,
